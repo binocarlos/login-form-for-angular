@@ -1,12 +1,12 @@
 <div>
   <ul class="nav nav-tabs" id="loginFormTab">
-    <li ng-class="{active:mode=='login'}"><a href="#" hm-tap="login('test')">Login</a></li>
-    <li ng-class="{active:mode=='register'}"><a href="#">Create Account</a></li>
+    <li ng-class="{active:mode=='login'}"><a href="#" hm-tap="setmode('login')">Login</a></li>
+    <li ng-class="{active:mode=='register'}"><a href="#" hm-tap="setmode('register')">Create Account</a></li>
   </ul>
   <div id="myTabContent" class="tab-content">
 
-    <div class="tab-pane active in" id="login">
-      <form class="form-horizontal" name="loginForm" action='/auth/local' method="POST" ng-submit="loginSubmit();">
+    <div ng-class="{active:mode=='login', in:mode=='login', fade:mode!='login'}" class="tab-pane" id="login">
+      <form class="form-horizontal" name="loginForm">
         <fieldset>
           <div class="control-group" ng-class="{error: showloginvalidate && loginForm.username.$invalid}">
             <!-- Username -->
@@ -33,14 +33,14 @@
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
-              <button class="btn btn-success">Login</button>
+              <button class="btn btn-success" hm-tap="loginSubmit();">Login</button>
             </div>
           </div>
         </fieldset>
       </form>                
     </div>
 
-    <div class="tab-pane fade" id="create">
+    <div ng-class="{active:mode=='register', in:mode=='register', fade:mode!='register'}" class="tab-pane" id="create">
       <form class="form-horizontal" name="registerForm">
         <fieldset>
 
@@ -85,7 +85,7 @@
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
-              <button class="btn btn-success" ng-class="{disabled:isactive}" ng-click="registerSubmit();">Create</button>
+              <button class="btn btn-success" ng-class="{disabled:isactive}" hm-tap="registerSubmit();">Create</button>
             </div>
           </div>
 
