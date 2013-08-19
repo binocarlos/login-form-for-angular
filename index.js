@@ -9,6 +9,7 @@ angular
   .directive('loginForm', function(){
 
 
+
     //field.required && showvalidate && containerForm[field.name].$invalid
     return {
       restrict:'EA',
