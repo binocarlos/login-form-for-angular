@@ -1,0 +1,20 @@
+{
+  "name": "login-form-for-angular",
+  "repo": "binocarlos/login-form-for-angular",
+  "description": "Angular JS directive to display a login form using Bootstrap markup",
+  "version": "0.0.1",
+  "keywords": [
+    "bootstrap",
+    "login"
+  ],
+  "dependencies": {
+    "binocarlos/hammer-for-angular": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ]
+}
