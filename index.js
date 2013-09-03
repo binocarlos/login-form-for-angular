@@ -9,6 +9,7 @@ angular
   .directive('loginForm', function(){
 
 
+    alert('form');
 
     //field.required && showvalidate && containerForm[field.name].$invalid
     return {
