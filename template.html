@@ -4,110 +4,70 @@
     <li ng-class="{active:mode=='register'}"><a href="#" hm-tap="setmode('register')">Create Account</a></li>
   </ul>
   <div id="myTabContent" class="tab-content">
-YO
-    <div ng-class="{active:mode=='login', in:mode=='login', fade:mode!='login'}" class="tab-pane" id="login">
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-    <div class="col-lg-10">
-      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form>
 
+    <div ng-class="{active:mode=='login', in:mode=='login', fade:mode!='login'}" class="tab-pane" id="login" style="margin-top:20px;">
 
       <form class="form-horizontal" name="loginForm" role="form">
-        <fieldset>
-          
-          <div class="form-group" ng-class="{error: showloginvalidate && loginForm.username.$invalid}">
-            <!-- Username -->
-            <label class="col-lg-2 control-label"  for="username">Username</label>
-            <div class="col-lg-10">
-              <input type="text" id="username" name="username" placeholder="" ng-model="login.username" required>
-              <span ng-show="showloginvalidate && loginForm.username.$error.required" class="help-inline">Required</span>
-            </div>
+  
+        <div class="form-group" ng-class="{error: showloginvalidate && loginForm.username.$invalid}">
+          <label for="inputEmail1" class="col-lg-2 control-label">Username</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="login.username" required>
           </div>
-
-          <div class="form-group" ng-class="{error: showloginvalidate && loginForm.password.$invalid}">
-            <!-- Username -->
-            <label class="col-lg-2 control-label"  for="username">Password</label>
-            <div class="col-lg-10">
-              <input type="password" id="password" name="password" placeholder="" ng-model="login.password" required>
-              <span ng-show="showloginvalidate && loginForm.password.$error.required" class="help-inline">Required</span>
-            </div>
+        </div>
+        <div class="form-group" ng-class="{error: showloginvalidate && loginForm.password.$invalid}">
+          <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-8">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="login.password" required>
           </div>
-
-          <div ng-show="loginmessage" class="help-inline" style="margin-bottom:10px;"><span class="label label-important">{{ loginmessage }}</span></div>
-          <div ng-show="postregistermessage" class="help-inline" style="margin-bottom:10px;"><span class="label label-info">{{ postregistermessage }}</span></div>
+        </div>
 
 
-          <div class="form-group">
-            <!-- Button -->
-            <div class="col-lg-10">
-              <button class="btn btn-success" hm-tap="loginSubmit();">Login</button>
-            </div>
+        <div ng-show="loginmessage" class="help-inline" style="margin-bottom:10px;"><span class="label label-danger">{{ loginmessage }}</span></div>
+        <div ng-show="postregistermessage" class="help-inline" style="margin-bottom:10px;"><span class="label label-info">{{ postregistermessage }}</span></div>
+
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-8">
+            <button type="submit" class="btn btn-default" hm-tap="loginSubmit();">Sign in</button>
           </div>
-        </fieldset>
-      </form>                
+        </div>
+      </form>
+            
     </div>
 
-    <div ng-class="{active:mode=='register', in:mode=='register', fade:mode!='register'}" class="tab-pane" id="create">
-      <form class="form-horizontal" name="registerForm">
-        <fieldset>
+    <div ng-class="{active:mode=='register', in:mode=='register', fade:mode!='register'}" class="tab-pane" id="create" style="margin-top:20px;">
+
+      <form class="form-horizontal" name="registerForm" role="form">
 
           <div class="form-group" ng-class="{error: showregistervalidate && registerForm.username.$invalid}">
             <!-- Username -->
             <label class="col-lg-2 control-label"  for="username">Username</label>
-            <div class="col-lg-10">
-              <input type="text" id="username" name="username" placeholder="" ng-model="register.username" required>
-              <span ng-show="showregistervalidate && registerForm.username.$error.required" class="help-inline">Required</span>
+            <div class="col-lg-8">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="register.username" required>
             </div>
           </div>
 
           <div class="form-group" ng-class="{error: showregistervalidate && registerForm.password.$invalid}">
             <!-- Password -->
             <label class="col-lg-2 control-label"  for="password">Password</label>
-            <div class="col-lg-10">
-              <input type="text" id="password" name="password" placeholder="" ng-model="register.password" required>
-              <span ng-show="showregistervalidate && registerForm.password.$error.required" class="help-inline">Required</span>
+            <div class="col-lg-8">
+              <input type="text" class="form-control" id="password" name="password" placeholder="Password" ng-model="register.password" required>
             </div>
           </div>         
 
           <div class="form-group" ng-class="{error: showregistervalidate && registerForm.fullname.$invalid}">
             <!-- Fullname -->
             <label class="col-lg-2 control-label"  for="fullname">Fullname</label>
-            <div class="col-lg-10">
-              <input type="text" id="fullname" name="fullname" placeholder="" ng-model="register.fullname" required>
-              <span ng-show="showregistervalidate && registerForm.fullname.$error.required" class="help-inline">Required</span>
+            <div class="col-lg-8">
+              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Fullname" ng-model="register.fullname" required>
             </div>
           </div>
 
           <div class="form-group" ng-class="{error: showregistervalidate && registerForm.email.$invalid}">
             <!-- Email -->
             <label class="col-lg-2 control-label"  for="email">Email</label>
-            <div class="col-lg-10">
-              <input type="email" id="email" name="email" placeholder="" ng-model="register.email" required>
-              <span ng-show="showregistervalidate && registerForm.email.$error.required" class="help-inline">Email & Required</span>
+            <div class="col-lg-8">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="register.email" required>
             </div>
           </div>
 
@@ -115,8 +75,8 @@ YO
 
           <div class="form-group">
             <!-- Button -->
-            <div class="col-lg-10">
-              <button class="btn btn-success" ng-class="{disabled:isactive}" hm-tap="registerSubmit();">Create</button>
+            <div class="col-lg-offset-2 col-lg-8">
+              <button class="btn btn-default" ng-class="{disabled:isactive}" hm-tap="registerSubmit();">Create</button>
             </div>
           </div>
 
