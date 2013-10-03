@@ -21,6 +21,10 @@ angular
           $scope.mode = mode;
         }
 
+        $scope.$on('login:mode', function(ev, mode){
+          $scope.setmode(mode);
+        })
+
         $scope.login = {
           username:'',
           password:''
