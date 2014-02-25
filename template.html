@@ -10,9 +10,9 @@
       <form class="form-horizontal" name="loginForm" role="form">
   
         <div class="form-group" ng-class="{error: showloginvalidate && loginForm.username.$invalid}">
-          <label for="inputEmail1" class="col-md-2 control-label">Username</label>
+          <label for="inputEmail1" class="col-md-2 control-label">Email</label>
           <div class="col-md-8">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="login.username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Email" ng-model="login.username" required>
           </div>
         </div>
         <div class="form-group" ng-class="{error: showloginvalidate && loginForm.password.$invalid}">
@@ -40,10 +40,10 @@
       <form class="form-horizontal" name="registerForm" role="form">
 
           <div class="form-group" ng-class="{error: showregistervalidate && registerForm.username.$invalid}">
-            <!-- Username -->
-            <label class="col-md-2 control-label"  for="username">Username</label>
+            <!-- Email -->
+            <label class="col-md-2 control-label"  for="username">Email</label>
             <div class="col-md-8">
-              <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="register.username" required>
+              <input type="email" class="form-control" id="username" name="username" placeholder="Email" ng-model="register.username" required>
             </div>
           </div>
 
@@ -63,13 +63,6 @@
             </div>
           </div>
 
-          <div class="form-group" ng-class="{error: showregistervalidate && registerForm.email.$invalid}">
-            <!-- Email -->
-            <label class="col-md-2 control-label"  for="email">Email</label>
-            <div class="col-md-8">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="register.email" required>
-            </div>
-          </div>
 
           <div ng-show="registermessage" class="help-inline"><span class="label label-danger">{{ registermessage }}</span></div>
 
