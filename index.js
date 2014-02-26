@@ -1,9 +1,8 @@
 var template = require('./template.js');
-var hammerangular = require('hammer-for-angular');
 
 angular
 	.module("loginForm", [
-    "hmTouchevents"
+    
   ])
 	
   .directive('loginForm', function(){
@@ -64,7 +63,25 @@ angular
           if(!$scope.registerForm.$valid){
             return;
           }
-          $scope.$emit('loginForm:register', $scope.register, function(error, message){
+          if(!$scope.register.password){
+            $scope.registermessage = 'please enter a password';
+            return;
+          }
+          if($scope.register.password!=$scope.register.password2){
+            $scope.registermessage = 'the 2 passwords do not match';
+            return;
+          }
+          
+
+          var data = {};
+
+          Object.keys($scope.register || {}).forEach(function(p){
+            data[p] = $scope.register[p];
+          })
+
+          delete(data.password2);
+          
+          $scope.$emit('loginForm:register', data, function(error, message){
             if(error){
               $scope.registermessage = error;
               return;

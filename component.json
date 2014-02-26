@@ -8,7 +8,7 @@
     "login"
   ],
   "dependencies": {
-    "binocarlos/hammer-for-angular": "*"
+    
   },
   "development": {},
   "license": "MIT",
